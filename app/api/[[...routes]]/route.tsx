@@ -21,8 +21,8 @@ const fetchLivePrices = async () => {
   );
   const data = await response.json();
   return {
-    moxiePriceUSD: data?.moxie?.usd || 0.01, // Default to 0.01 if not found
-    ethPriceUSD: data?.ethereum?.usd || 1600, // Default to 1600 if not found
+    moxiePriceUSD: data?.moxie?.usd || 0.01,
+    ethPriceUSD: data?.ethereum?.usd || 1600,
   };
 };
 
@@ -155,7 +155,7 @@ app.frame("/", async (c) => {
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: "20px",
+                gap: "30px", // Increased gap for better alignment
                 marginTop: "20px",
               }}
             >
@@ -164,14 +164,14 @@ app.frame("/", async (c) => {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  fontSize: "1.8rem",
+                  fontSize: "2.5rem", // Increased size
                   color: "#61dafb",
                 }}
               >
                 <img
                   src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png"
                   alt="USD Logo"
-                  style={{ width: "24px", height: "24px", marginRight: "8px" }}
+                  style={{ width: "32px", height: "32px", marginRight: "12px" }}
                 />
                 <span>${moxieEarningsUSD}</span>
               </div>
@@ -180,14 +180,14 @@ app.frame("/", async (c) => {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  fontSize: "1.8rem",
+                  fontSize: "2.5rem", // Increased size
                   color: "#61dafb",
                 }}
               >
                 <img
                   src="https://cryptologos.cc/logos/ethereum-eth-logo.png"
                   alt="Ethereum Logo"
-                  style={{ width: "24px", height: "24px", marginRight: "8px" }}
+                  style={{ width: "32px", height: "32px", marginRight: "12px" }}
                 />
                 <span>{moxieEarningsETH} ETH</span>
               </div>
